@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relationship Fun Facts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8e5e5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #ff4b6e;
+            margin-bottom: 30px;
+        }
+
+        .fact-box {
+            background-color: #fff5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            background-color: #ff4b6e;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff2d55;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Relationship Fun Facts</h1>
+        <div class="fact-box">
+            <p id="fact-display">Click the button to get a relationship fun fact!</p>
+        </div>
+        <button id="new-fact-btn">Get New Fact</button>
+    </div>
+
+    <script>
+        const facts = [
+            "Couples who laugh together stay together! Shared laughter creates stronger bonds.",
+            "On average, people fall in love only 4 times in their lifetime.",
+            "Holding hands releases oxytocin, the 'love hormone'.",
+            "Long-distance relationships can be stronger than close-distance ones.",
+            "It takes about 4 minutes to decide whether you like someone or not.",
+            "Looking into each other's eyes for 4 minutes can increase intimacy.",
+            "Happy couples typically say 'we' more often than 'I'.",
+            "Couples who travel together have better relationships.",
+            "Dancing together increases bonding and trust.",
+            "Cuddling releases natural pain killers in the body."
+        ];
+
+        const factDisplay = document.getElementById('fact-display');
+        const newFactBtn = document.getElementById('new-fact-btn');
+
+        function getRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            factDisplay.textContent = facts[randomIndex];
+        }
+
+        newFactBtn.addEventListener('click', getRandomFact);
+
+        // Display initial fact when page loads
+        getRandomFact();
+    </script>
+</body>
+</html>
